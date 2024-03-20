@@ -1,8 +1,32 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+
+import localFont from "next/font/local";
+import "@/styles/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const sagak = localFont({
+  src: [
+    {
+      path: "../fonts/sagak.ttf",
+      weight: "normal",
+      style: "normal",
+    },
+    // {
+    //   path: "../fonts/sagak.ttf",
+    //   weight: "500",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../fonts/sagak.ttf",
+    //   weight: "700",
+    //   style: "normal",
+    // },
+  ],
+  variable: "--font-sagak",
+  display: "fallback",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={sagak.variable}>{children}</body>
     </html>
   );
 }

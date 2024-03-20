@@ -1,0 +1,38 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  .type_txt {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+.container {
+  width: fit-content;
+}
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: solid 10px rgb(146, 146, 146);
+  font-size: 23px;
+  animation: type-text none 6s;
+  animation-timing-function: steps(60);
+}
+@keyframes type-text {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes type-text-reverse {
+  100% {
+    width: 100%;
+  }
+  0% {
+    width: 0%;
+  }
+}
