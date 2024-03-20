@@ -4,9 +4,25 @@
   gap: 10px;
   padding: 15px;
   box-sizing: border-box;
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #818181;
+    padding: 15px;
+    box-sizing: border-box;
+  }
   .type_txt {
     font-size: 30px;
     font-weight: 500;
+    background-color: #ffdce4;
+    width: fit-content;
+  }
+  .hori_line {
+    width: 100%;
+    height: 1px;
+    background-color: #bebebe;
+    margin-bottom: 10px;
   }
 }
 .container {
@@ -15,10 +31,14 @@
 .text {
   overflow: hidden;
   white-space: nowrap;
-  border-right: solid 10px rgb(146, 146, 146);
+  border-right: solid 5px #ffdce4;
   font-size: 23px;
-  animation: type-text none 6s;
-  animation-timing-function: steps(60);
+  animation: type-text 6s infinite alternate steps(50);
+  //   animation: type-text, type-text-reverse;
+  //   animation-iteration-count: infinite, infinite;
+  //   animation-timing-function: steps(60), steps(40);
+  //   animation-duration: 6s, 6s;
+  //   animation-delay: 0s, 6s;
 }
 @keyframes type-text {
   0% {
@@ -29,10 +49,10 @@
   }
 }
 @keyframes type-text-reverse {
-  100% {
+  0% {
     width: 100%;
   }
-  0% {
+  100% {
     width: 0%;
   }
 }
