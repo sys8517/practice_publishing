@@ -17,6 +17,12 @@
     font-weight: 500;
     background-color: #ffdce4;
     width: fit-content;
+    &.sky {
+      background-color: #dcf1ff;
+    }
+    &.green {
+      background-color: #dcffdc;
+    }
   }
   .hori_line {
     width: 100%;
@@ -25,6 +31,8 @@
     margin-bottom: 10px;
   }
 }
+
+// 첫번째 only css - - - - - -
 .container {
   width: fit-content;
 }
@@ -54,5 +62,33 @@
   }
   100% {
     width: 0%;
+  }
+}
+
+// - - - - - -
+
+.text_js {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  font-size: 23px;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 4px;
+    height: 100%;
+    background-color: #dcf1ff;
+    animation: blink-effect 1s step-end infinite;
+  }
+  &.active::after {
+    display: none;
+  }
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
   }
 }
