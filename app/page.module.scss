@@ -33,11 +33,10 @@
         cursor: pointer;
         /* font-family: "sagak"; */
       }
+      .btn:hover {
+        background-color: var(--gray-100);
+        color: var(--mblue02);
+      }
     }
   }
-}
-
-.btn:hover {
-  background-color: var(--gray-100);
-  color: var(--mblue02);
 }
