@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 
 import localFont from "next/font/local";
 import "@/styles/globals.scss";
+import "./page.css";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,7 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sagak.variable}>{children}</body>
+      <body className={sagak.variable}>
+        {" "}
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,0 +1,11 @@
+.header_box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--gray-500);
+  background-color: var(--mblue01);
+}

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "sagak";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/sagak.ttf") format("truetype");
+  font-display: swap;
+}
+
+.main > div {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+
+  .swipe_section {
+    display: flex;
+    width: 100%;
+
+    .panel_1 {
+      display: flex;
+      gap: 6px;
+      padding: 10px;
+      box-sizing: border-box;
+
+      .btn {
+        display: flex;
+        background-color: var(--mblue01);
+        color: var(--gray-100);
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid var(--mblue02);
+        cursor: pointer;
+        /* font-family: "sagak"; */
+      }
+    }
+  }
+}
+
+.btn:hover {
+  background-color: var(--gray-100);
+  color: var(--mblue02);
+}

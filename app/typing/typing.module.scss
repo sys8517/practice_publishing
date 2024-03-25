@@ -11,6 +11,7 @@
     border: 1px solid #818181;
     padding: 15px;
     box-sizing: border-box;
+    min-height: 110px;
   }
   .type_txt {
     font-size: 30px;
@@ -40,7 +41,7 @@
   overflow: hidden;
   white-space: nowrap;
   border-right: solid 5px #ffdce4;
-  font-size: 23px;
+  font-size: 18px;
   animation: type-text 6s infinite alternate steps(50);
   //   animation: type-text, type-text-reverse;
   //   animation-iteration-count: infinite, infinite;

@@ -1,0 +1,28 @@
+.wrap div {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.cat1 {
+  background: url(https://cdn.pixabay.com/photo/2020/07/14/16/18/snow-5404785_960_720.jpg);
+  background-attachment: fixed;
+}
+.cat2 {
+  background: url(https://cdn.pixabay.com/photo/2022/08/23/06/55/village-7405160_960_720.jpg);
+  background-attachment: fixed;
+}
+
+.cat3 {
+  background: url(https://cdn.pixabay.com/photo/2024/03/06/11/09/plane-8616271_1280.jpg);
+  background-attachment: fixed;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background: #6685ad;
+  font-size: 1.1rem;
+  font-size: 30px;
+}
