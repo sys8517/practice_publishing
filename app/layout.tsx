@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import "@/styles/globals.scss";
 import "./page.css";
 import Header from "@/components/Header";
+import RecoilRootProvider from "@/provider/RecoilProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,7 +46,7 @@ export default function RootLayout({
       <body className={sagak.variable}>
         {" "}
         <Header />
-        {children}
+        <RecoilRootProvider>{children}</RecoilRootProvider>
       </body>
     </html>
   );

@@ -15,27 +15,169 @@
   .swipe_section {
     display: flex;
     width: 100%;
+    height: calc(100vh - 80px);
 
     .panel_1 {
       display: flex;
-      gap: 6px;
+      gap: 24px;
       padding: 10px;
       box-sizing: border-box;
+      flex-wrap: wrap;
 
-      .btn {
-        display: flex;
-        background-color: var(--mblue01);
-        color: var(--gray-100);
-        padding: 10px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 1px solid var(--mblue02);
-        cursor: pointer;
-        /* font-family: "sagak"; */
+      .card {
+        width: calc((100% - 72px) / 4);
       }
-      .btn:hover {
-        background-color: var(--gray-100);
-        color: var(--mblue02);
+    }
+    .panel_2 {
+      width: 100%;
+      display: flex;
+      gap: 24px;
+      padding: 10px;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      background-color: var(--gray-400);
+    }
+  }
+}
+
+// 스와이퍼 풀페이지
+.home_section {
+  height: 100vh;
+  .swiper_wrap {
+    width: 100%;
+    height: 100%;
+    .swiper_item {
+      width: 100%;
+      height: 100%;
+      &:first-of-type {
+        background: blueviolet;
+      }
+      &:nth-of-type(2) {
+        background: paleturquoise;
+      }
+      &:nth-of-type(3) {
+        background: darkgray;
+      }
+      &:nth-of-type(4) {
+        background: blanchedalmond;
+      }
+      &:last-of-type {
+        background: pink;
+      }
+    }
+    //
+    페이징 .swiper-pagination {
+      right: unset;
+      left: 5rem;
+      span {
+        width: 1.3rem;
+        height: 1.3rem;
+        border: 3px solid var(--gray-100);
+        box-sizing: border-box;
+        margin: 2rem 0;
+        background-color: transparent;
+        color: transparent;
+        font-size: var(--fs-14);
+        font-weight: bold;
+        opacity: 1;
+        position: relative;
+        transition: all 0.3s;
+        &::after {
+          width: 0rem;
+          height: auto;
+          position: absolute;
+          left: 1.3rem;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 0;
+        }
+        &:first-of-type {
+          &::after {
+            content: "HOME";
+          }
+        }
+        &:nth-of-type(2) {
+          &::after {
+            content: "BUSINESS";
+          }
+        }
+        &:nth-of-type(3) {
+          &::after {
+            content: "NEWS";
+          }
+        }
+        &:nth-of-type(4) {
+          &::after {
+            content: "INFO";
+          }
+        }
+        &:last-of-type {
+          &::after {
+            content: "STATS";
+          }
+        }
+        // 페이징 액티브
+        &.swiper-pagination-bullet-active {
+          border-color: var(--warning03);
+          color: var(--warning03);
+          &::after {
+            width: fit-content;
+            left: 2rem;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+//
+
+@media screen and (max-width: 1300px) {
+  .main > div {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+
+    .swipe_section {
+      .panel_1 {
+        .card {
+          width: calc((100% - 48px) / 3);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main > div {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+
+    .swipe_section {
+      .panel_1 {
+        .card {
+          width: calc((100% - 24px) / 2);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .main > div {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+
+    .swipe_section {
+      .panel_1 {
+        .card {
+          width: 100%;
+        }
       }
     }
   }
