@@ -1,184 +1,289 @@
 @font-face {
-  font-family: "sagak";
-  font-weight: 300;
-  font-style: normal;
-  src: url("../fonts/sagak.ttf") format("truetype");
-  font-display: swap;
+    font-family: 'sagak';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/sagak.ttf') format('truetype');
+    font-display: swap;
 }
 
 .main > div {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 100%;
-
-  .swipe_section {
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 80px);
 
-    .panel_1 {
-      display: flex;
-      gap: 24px;
-      padding: 10px;
-      box-sizing: border-box;
-      flex-wrap: wrap;
+    .swipe_section {
+        display: flex;
+        width: 100%;
+        height: calc(100vh - 80px);
 
-      .card {
-        width: calc((100% - 72px) / 4);
-      }
+        .panel_1 {
+            display: flex;
+            gap: 24px;
+            padding: 10px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+
+            .card {
+                width: calc((100% - 72px) / 4);
+            }
+        }
+        .panel_2 {
+            position: relative;
+            width: 100%;
+            display: flex;
+            gap: 24px;
+            padding: 10px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            // background-color: var(--gray-400);
+            background-color: var(--gray-1000);
+            background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(25, 19, 39) 80%, rgb(43, 32, 72));
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+        }
     }
-    .panel_2 {
-      width: 100%;
-      display: flex;
-      gap: 24px;
-      padding: 10px;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-      background-color: var(--gray-400);
-    }
-  }
 }
 
 // 스와이퍼 풀페이지
 .home_section {
-  height: 100vh;
-  .swiper_wrap {
-    width: 100%;
-    height: 100%;
-    .swiper_item {
-      width: 100%;
-      height: 100%;
-      &:first-of-type {
-        background: blueviolet;
-      }
-      &:nth-of-type(2) {
-        background: paleturquoise;
-      }
-      &:nth-of-type(3) {
-        background: darkgray;
-      }
-      &:nth-of-type(4) {
-        background: blanchedalmond;
-      }
-      &:last-of-type {
-        background: pink;
-      }
+    height: 100vh;
+    .swiper_wrap {
+        width: 100%;
+        height: 100%;
+        .swiper_item {
+            width: 100%;
+            height: 100%;
+            &:first-of-type {
+                background: blueviolet;
+            }
+            &:nth-of-type(2) {
+                background: paleturquoise;
+            }
+            &:nth-of-type(3) {
+                background: darkgray;
+            }
+            &:nth-of-type(4) {
+                background: blanchedalmond;
+            }
+            &:last-of-type {
+                background: pink;
+            }
+        }
+        //페이징
+        .swiper-pagination {
+            right: unset;
+            left: 5rem;
+            span {
+                width: 1.3rem;
+                height: 1.3rem;
+                border: 3px solid var(--gray-100);
+                box-sizing: border-box;
+                margin: 2rem 0;
+                background-color: transparent;
+                color: transparent;
+                font-size: var(--fs-14);
+                font-weight: bold;
+                opacity: 1;
+                position: relative;
+                transition: all 0.3s;
+                &::after {
+                    width: 0rem;
+                    height: auto;
+                    position: absolute;
+                    left: 1.3rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 0;
+                }
+                &:first-of-type {
+                    &::after {
+                        content: 'HOME';
+                    }
+                }
+                &:nth-of-type(2) {
+                    &::after {
+                        content: 'BUSINESS';
+                    }
+                }
+                &:nth-of-type(3) {
+                    &::after {
+                        content: 'NEWS';
+                    }
+                }
+                &:nth-of-type(4) {
+                    &::after {
+                        content: 'INFO';
+                    }
+                }
+                &:last-of-type {
+                    &::after {
+                        content: 'STATS';
+                    }
+                }
+                // 페이징 액티브
+                &.swiper-pagination-bullet-active {
+                    border-color: var(--warning03);
+                    color: var(--warning03);
+                    &::after {
+                        width: fit-content;
+                        left: 2rem;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
-    //
-    페이징 .swiper-pagination {
-      right: unset;
-      left: 5rem;
-      span {
-        width: 1.3rem;
-        height: 1.3rem;
-        border: 3px solid var(--gray-100);
-        box-sizing: border-box;
-        margin: 2rem 0;
-        background-color: transparent;
-        color: transparent;
-        font-size: var(--fs-14);
-        font-weight: bold;
-        opacity: 1;
-        position: relative;
-        transition: all 0.3s;
-        &::after {
-          width: 0rem;
-          height: auto;
-          position: absolute;
-          left: 1.3rem;
-          top: 50%;
-          transform: translateY(-50%);
-          opacity: 0;
-        }
-        &:first-of-type {
-          &::after {
-            content: "HOME";
-          }
-        }
-        &:nth-of-type(2) {
-          &::after {
-            content: "BUSINESS";
-          }
-        }
-        &:nth-of-type(3) {
-          &::after {
-            content: "NEWS";
-          }
-        }
-        &:nth-of-type(4) {
-          &::after {
-            content: "INFO";
-          }
-        }
-        &:last-of-type {
-          &::after {
-            content: "STATS";
-          }
-        }
-        // 페이징 액티브
-        &.swiper-pagination-bullet-active {
-          border-color: var(--warning03);
-          color: var(--warning03);
-          &::after {
-            width: fit-content;
-            left: 2rem;
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
 }
 //
-
-@media screen and (max-width: 1300px) {
-  .main > div {
+.stars {
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
     width: 100%;
-
-    .swipe_section {
-      .panel_1 {
-        .card {
-          width: calc((100% - 48px) / 3);
-        }
-      }
+}
+//별 효과
+.star {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    overflow: hidden;
+    opacity: 0.7;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.style {
+    &0 {
+        width: 1px;
+        height: 1px;
     }
-  }
+    &1 {
+        width: 1px;
+        height: 1px;
+    }
+    &2 {
+        width: 2px;
+        height: 2px;
+    }
+    &3 {
+        width: 3px;
+        height: 3px;
+    }
+}
+
+.opacity {
+    &1 {
+        opacity: 1;
+    }
+    &2 {
+        opacity: 0.5;
+    }
+    &3 {
+        opacity: 0.1;
+    }
+}
+
+.twinkle {
+    &1 {
+        animation-duration: 0.5s;
+        animation-name: twinkling;
+    }
+    &2 {
+        animation-duration: 1s;
+        animation-name: twinkling;
+    }
+    &3 {
+        animation-duration: 1.5s;
+        animation-name: twinkling;
+    }
+    &4 {
+        animation-duration: 2s;
+        animation-name: twinklingWithNoBoxShadow;
+    }
+}
+
+@keyframes twinkling {
+    0% {
+        box-shadow: 0 0 10px 3px rgb(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 10px 3px rgb(255, 255, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px 3px rgb(255, 255, 255, 0.1);
+    }
+}
+@keyframes twinklingWithNoBoxShadow {
+    0% {
+        background-color: #ffffff;
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+    }
+    20% {
+        background-color: #ffc4c4;
+        box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+    }
+    80% {
+        background-color: #c4cfff;
+        box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+    }
+    100% {
+        background-color: #ffffff;
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+    }
+}
+//  ---------- 반응형
+@media screen and (max-width: 1300px) {
+    .main > div {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
+
+        .swipe_section {
+            .panel_1 {
+                .card {
+                    width: calc((100% - 48px) / 3);
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 900px) {
-  .main > div {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 100%;
+    .main > div {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
 
-    .swipe_section {
-      .panel_1 {
-        .card {
-          width: calc((100% - 24px) / 2);
+        .swipe_section {
+            .panel_1 {
+                .card {
+                    width: calc((100% - 24px) / 2);
+                }
+            }
         }
-      }
     }
-  }
 }
 
 @media screen and (max-width: 640px) {
-  .main > div {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 100%;
+    .main > div {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
 
-    .swipe_section {
-      .panel_1 {
-        .card {
-          width: 100%;
+        .swipe_section {
+            .panel_1 {
+                .card {
+                    width: 100%;
+                }
+            }
         }
-      }
     }
-  }
 }
